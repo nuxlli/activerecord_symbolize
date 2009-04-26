@@ -4,12 +4,13 @@ module ActionView
     module FormHelper
       # helper to create a select drop down list for the symbolize values
       def select_sym(object, method, choices = nil, options = {}, html_options = {})
-        InstanceTag.new(object, method, self, nil, options.delete(:object)).
+        
+        InstanceTag.new(object, method, self, options.delete(:object)).
           to_select_sym_tag(choices, options, html_options)
       end
       
       def radio_sym(object, method, choices = nil, options = {})
-        InstanceTag.new(object, method, self, nil, options.delete(:object)).
+        InstanceTag.new(object, method, self, options.delete(:object)).
           to_radio_sym_tag(choices, options)
       end
     end
